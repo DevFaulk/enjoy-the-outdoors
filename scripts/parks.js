@@ -7,8 +7,6 @@ const locationTable = document.querySelector("#locationTable");
 const locationTableBody = document.querySelector("#locationTableBody");
 
 function loadLocationInDropdown() {
-  document.getElementById("byLocationRadioFilter").unchecked;
-
   document.querySelector("select>option").innerText = "Select by state...";
   for (const state of locationsArray) {
     let option = new Option(state);
@@ -16,8 +14,6 @@ function loadLocationInDropdown() {
   }
 }
 function loadTypeInDropdown() {
-  document.getElementById("byLocationRadioFilter").unchecked;
-
   document.querySelector("select>option").innerText = "Select by type...";
   for (const type of parkTypesArray) {
     let option = new Option(type);
@@ -42,8 +38,12 @@ function createLocationData() {
     websiteCell.innerCell = park.Visit;
   }
 }
-byTypeRadioFilter.onclick = loadTypeInDropdown;
+byTypeRadioFilter.onclick = function () {
+  loadTypeInDropdown();
+};
 
-byLocationRadioFilter.onclick = loadLocationInDropdown;
+byLocationRadioFilter.onclick = function name() {
+  loadLocationInDropdown();
+};
 
 locationSelector.onchange = createLocationData;

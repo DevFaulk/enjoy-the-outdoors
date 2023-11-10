@@ -7,15 +7,23 @@ const locationTable = document.querySelector("#locationTable");
 const locationTableBody = document.querySelector("#locationTableBody");
 
 function loadLocationInDropdown() {
-  document.querySelector('option:value="select"').innerText =
-    "Select by state...";
+  document.getElementById("byLocationRadioFilter").unchecked;
+
+  document.querySelector("select>option").innerText = "Select by state...";
   for (const state of locationsArray) {
     let option = new Option(state);
     locationSelector.appendChild(option);
   }
 }
+function loadTypeInDropdown() {
+  document.getElementById("byLocationRadioFilter").unchecked;
 
-byLocationRadioFilter.onclick = loadLocationInDropdown;
+  document.querySelector("select>option").innerText = "Select by type...";
+  for (const type of parkTypesArray) {
+    let option = new Option(type);
+    locationSelector.appendChild(option);
+  }
+}
 
 function createLocationData() {
   for (const park of nationalParksArray) {
@@ -34,5 +42,8 @@ function createLocationData() {
     websiteCell.innerCell = park.Visit;
   }
 }
+byTypeRadioFilter.onclick = loadTypeInDropdown;
+
+byLocationRadioFilter.onclick = loadLocationInDropdown;
 
 locationSelector.onchange = createLocationData;

@@ -24,29 +24,30 @@ function displayMountainData() {
 
     let mountainElev = document.createElement("span");
     mountainElev.innerText = `- Elevation: ${mountain.elevation}`;
-    mountainElev.style = "rgba(255, 255, 255, 0.3)";
+    mountainElev.style = "color: rgba(255, 255, 255, 0.3)";
     mountainData.appendChild(mountainElev);
     let mountainEffort = document.createElement("h3");
     mountainEffort.innerText = `Effort Level: ${mountain.effort}`;
-    mountainEffort.style = "rgba(255, 255, 255, 0.7)";
+    mountainEffort.style = "color: rgba(255, 255, 255, 0.7)";
     mountainData.appendChild(mountainEffort);
     let mountainDescribe = document.createElement("div");
     mountainDescribe.style = "display: flex; justify-content: space-between";
     mountainData.appendChild(mountainDescribe);
     let imgAndCoords = document.createElement("span");
-    imgAndCoords.style = "display: inherit; flex-direction: column";
+    imgAndCoords.style = "display: inherit; flex-direction: column; margin-inline-end: 2rem; text-align: center";
     mountainDescribe.appendChild(imgAndCoords);
     let mountainImg = document.createElement("img");
     mountainImg.src = `images/${mountain.img}`;
+    mountainImg.style = "height: 400px; width: 100%; padding-bottom: 1rem"
     mountainImg.alt = mountain.name;
     imgAndCoords.appendChild(mountainImg);
     let mountainCoords = document.createElement("span");
-    mountainCoords.innerText = mountain.coords;
+    mountainCoords.innerText = (`Latitude: ${mountain.coords.lat} Longitude: ${mountain.coords.lng}`);
     mountainCoords.style = "text-align: center";
     imgAndCoords.appendChild(mountainCoords);
     let mountainDescription = document.createElement("span");
     mountainDescription.innerText = mountain.desc;
-    mountainDescription.style = "font-size: 1.5rem";
+    mountainDescription.style = "font-size: 1.5rem; width: 40%"
     mountainDescribe.appendChild(mountainDescription);
   }
 }

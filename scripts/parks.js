@@ -5,6 +5,7 @@ const byTypeRadioFilter = document.querySelector("#byTypeRadioFilter");
 const locationSelector = document.querySelector("#locationSelector");
 const parkTable = document.querySelector("#parkTable");
 const parkTableBody = document.querySelector("#parkTableBody");
+const parkTableHead = document.querySelector("#parkTableHead");
 const byAllRadioFilter = document.querySelector("#byAllRadioFilter");
 
 function loadLocationInDropdown() {
@@ -55,8 +56,13 @@ function loadAllInDropdown() {
     zipCell.innerText = park.ZipCode;
     let phoneCell = row.insertCell(4);
     phoneCell.innerText = park.Phone;
-    let websiteCell = row.insertCell(5);
-    websiteCell.innerCell = park.Visit;
+    if (park.Visit) {
+      var link = document.createElement("a");
+      let websiteCell = row.insertCell(5);
+      link.href = park.Visit;
+      link.innerText = park.LocationName;
+      websiteCell.appendChild(link);
+    }
   }
 }
 
@@ -91,8 +97,13 @@ function appendParkToTable(park) {
   zipCell.innerText = park.ZipCode;
   let phoneCell = row.insertCell(4);
   phoneCell.innerText = park.Phone;
-  let websiteCell = row.insertCell(5);
-  websiteCell.innerCell = park.Visit;
+  if (park.Visit) {
+    var link = document.createElement("a");
+    let websiteCell = row.insertCell(5);
+    link.href = park.Visit;
+    link.innerText = park.LocationName;
+    websiteCell.appendChild(link);
+  }
 }
 
 byTypeRadioFilter.onclick = function () {

@@ -7,35 +7,53 @@ const locationTable = document.querySelector("#locationTable");
 const locationTableBody = document.querySelector("#locationTableBody");
 
 function loadLocationInDropdown() {
-  document.querySelector("select>option").innerText = "Select by state...";
+  // Clear previous options
+  locationSelector.innerHTML = "";
+
+  let defaultOption = new Option("Select by state...");
+  locationSelector.appendChild(defaultOption);
+
   for (const state of locationsArray) {
     let option = new Option(state);
+    option.value = state;
     locationSelector.appendChild(option);
   }
 }
 function loadTypeInDropdown() {
-  document.querySelector("select>option").innerText = "Select by type...";
+  // Clear previous options
+  locationSelector.innerHTML = "";
+
+  let defaultOption = new Option("Select by type...");
+  locationSelector.appendChild(defaultOption);
+
   for (const type of parkTypesArray) {
     let option = new Option(type);
+    option.value = type;
     locationSelector.appendChild(option);
   }
 }
 
 function createLocationData() {
+  // Clear previous rows
+  locationTableBody.innerHTML = "";
+
   for (const park of nationalParksArray) {
-    let row = locationTableBody.insertRow();
-    let nameCell = row.insertCell(0);
-    nameCell.innerText = park.LocationName;
-    let addrCell = row.insertCell(1);
-    addrCell.innerText = park.Address;
-    let cityStateCell = row.insertCell(2);
-    cityStateCell.innerText = park.City + park.State;
-    let zipCell = row.insertCell(3);
-    zipCell.innerText = park.ZipCode;
-    let phoneCell = row.insertCell(4);
-    phoneCell.innerText = park.Phone;
-    let websiteCell = row.innerCell(5);
-    websiteCell.innerCell = park.Visit;
+    if (park.State == locationSelector.value) {
+      let row = locationTableBody.insertRow();
+      let nameCell = row.insertCell(0);
+      nameCell.innerText = park.LocationName;
+      let addrCell = row.insertCell(1);
+      addrCell.innerText = park.Address;
+      let cityStateCell = row.insertCell(2);
+      cityStateCell.innerText = `${park.City}, ${park.State}`;
+      let zipCell = row.insertCell(3);
+      zipCell.innerText = park.ZipCode;
+      let phoneCell = row.insertCell(4);
+      phoneCell.innerText = park.Phone;
+      let websiteCell = row.insertCell(5);
+      websiteCell.innerCell = park.Visit;
+      return;
+    }
   }
 }
 byTypeRadioFilter.onclick = function () {

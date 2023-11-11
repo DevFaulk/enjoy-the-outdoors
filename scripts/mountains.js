@@ -34,21 +34,20 @@ function displayMountainData() {
     mountainDescribe.style = "display: flex; justify-content: space-between";
     mountainData.appendChild(mountainDescribe);
     let imgAndCoords = document.createElement("span");
-    imgAndCoords.style = "display: inherit; flex-direction: column"
-    mountainDescribe.appendChild(imgAndCoords)
+    imgAndCoords.style = "display: inherit; flex-direction: column";
+    mountainDescribe.appendChild(imgAndCoords);
     let mountainImg = document.createElement("img");
-    mountainImg.src = mountain.img;
+    mountainImg.src = `images/${mountain.img}`;
     mountainImg.alt = mountain.name;
     imgAndCoords.appendChild(mountainImg);
     let mountainCoords = document.createElement("span");
-    mountainCoords.innerText = mountain.coords
-    mountainCoords.style = "text-align: center"
-    imgAndCoords.appendChild(mountainCoords)
+    mountainCoords.innerText = mountain.coords;
+    mountainCoords.style = "text-align: center";
+    imgAndCoords.appendChild(mountainCoords);
     let mountainDescription = document.createElement("span");
-    mountainDescription.innerText = mountain.desc
+    mountainDescription.innerText = mountain.desc;
     mountainDescription.style = "font-size: 1.5rem";
     mountainDescribe.appendChild(mountainDescription);
-    
   }
 }
 

@@ -11,6 +11,7 @@ function loadLocationInDropdown() {
   locationSelector.style.display = "block"; // Show selector
   locationSelector.innerHTML = ""; // Clear previous options
   parkTableBody.innerHTML = "";
+  byLocationRadioFilter.checked = true;
 
   let defaultOption = new Option("Select by state...");
   locationSelector.appendChild(defaultOption);
@@ -64,7 +65,7 @@ function createLocationData() {
   parkTableBody.innerHTML = "";
 
   const selectedState = locationSelector.value;
-  const selectedType = parkTypesArray.find(type =>
+  const selectedType = parkTypesArray.find((type) =>
     selectedState.includes(type)
   );
 
@@ -77,8 +78,6 @@ function createLocationData() {
     }
   }
 }
-
-
 
 function appendParkToTable(park) {
   let row = parkTableBody.insertRow();

@@ -76,14 +76,18 @@ function createLocationData() {
   );
 
   for (const park of nationalParksArray) {
+    const islandState =
+      selectedState === "Rhode Island" || selectedState === "Virgin Islands";
+
     if (
-      park.State === selectedState ||
-      park.LocationName.includes(selectedType)
+      (park.State === selectedState ||
+        (park.LocationName.includes(selectedType) && !islandState))
     ) {
       appendParkToTable(park);
     }
   }
 }
+
 
 function appendParkToTable(park) {
   let row = parkTableBody.insertRow();

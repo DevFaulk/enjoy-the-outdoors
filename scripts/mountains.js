@@ -1,23 +1,36 @@
+const moment = require('moment-timezone');
+const geoTz = require('geo-tz');
+
 const mountainSelect = document.querySelector("#mountainSelect");
 const mountainData = document.querySelector("#mountainData");
 
-async function displaySunriseTime(lat, lng, timeZone) {
+async function displaySunriseTime(lat, lng) {
   try {
-    const data = await getSunriseForMountain(lat, lng, timeZone);
-    return moment.tz(data.results.sunrise, timeZone).format("HH:mm:ss");
+    const timezone = geoTz(lat, lng)[0]; // Get the timezone based on lat/lng
+    const data = await getSunriseForMountain(lat, lng);
+
+    // Use Moment Timezone to format the time in the respective time zone
+    const sunriseTime = moment.tz(data.results.sunrise, timezone).format('hh:mm A');
+
+    return sunriseTime;
   } catch (error) {
-    console.error("Error fetching sunrise time:", error);
-    return "N/A";
+    console.error('Error fetching sunrise time:', error);
+    return 'N/A';
   }
 }
 
-async function displaySunsetTime(lat, lng, timeZone) {
+async function displaySunsetTime(lat, lng) {
   try {
-    const data = await getSunsetForMountain(lat, lng, timeZone);
-    return moment.tz(data.results.sunset, timeZone).format("HH:mm:ss");
+    const timezone = geoTz(lat, lng)[0]; // Get the timezone based on lat/lng
+    const data = await getSunsetForMountain(lat, lng);
+
+    // Use Moment Timezone to format the time in the respective time zone
+    const sunsetTime = moment.tz(data.results.sunset, timezone).format('hh:mm A');
+
+    return sunsetTime;
   } catch (error) {
-    console.error("Error fetching sunset time:", error);
-    return "N/A";
+    console.error('Error fetching sunset time:', error);
+    return 'N/A';
   }
 }
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.0.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Head Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="text-lg bg-sky-950 text-purple-100">
+    <header>
+      <nav class="bg-gray-900 flex justify-between">
+        <div class="icon">
+          <img
+            src="../images/Adams-StoryImage_2.jpg"
+            alt=""
+            class="flex flex-start w-24 h-24 m-4" />
+        </div>
+        <div class="header"></div>
+        <div class="nav-links flex m-4 align-middle justify-between">
+          <div class="m-auto p-3"><a href="./index.html"></a>Home</div>
+          <div class="m-auto p-3"><a href="./parks.html"></a>Parks</div>
+          <div class="m-auto p-3"><a href="./mountains.html"></a>Mountains</div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Carousel -->
+      <section>
+        <!-- Carousel Wrapper -->
+        <div class="carousel w-full">
+          <div id="slide1" class="carousel-item relative w-full">
+            <img src="../images/item1 carousel.jpg" class="w-full" />
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide4" class="btn btn-circle">❮</a>
+              <a href="#slide2" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide2" class="carousel-item relative w-full">
+            <img src="../images/item2 carousel.jpg" class="w-full" />
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide1" class="btn btn-circle">❮</a>
+              <a href="#slide3" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide3" class="carousel-item relative w-full">
+            <img src="../images/item3 carousel.jpg" class="w-full" />
+            <div
+              class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide2" class="btn btn-circle">❮</a>
+              <a href="#slide4" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="container">
+      <span class="footer-copyright"> Copyright Teddy Faulk 2023 </span>
+      <span class="footer-links">
+        <table>
+          <thead>
+            <tr>
+              <th>Navigation</th>
+              <th>Contact Us</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="index.html">Home Page</a></td>
+              <td>faulkdev@gmail.com</td>
+            </tr>
+            <tr>
+              <td><a href="parks.html">Parks Page</a></td>
+              <td>123-456-7890</td>
+            </tr>
+            <tr>
+              <td><a href="mountains.html">Mountains Page</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </span>
+    </footer>
+
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

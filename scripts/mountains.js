@@ -1,46 +1,43 @@
-const moment = require('moment-timezone');
-const geoTz = require('geo-tz');
-
 const mountainSelect = document.querySelector("#mountainSelect");
 const mountainData = document.querySelector("#mountainData");
 
+async function displayMountainsInSelect() {
+  for (const mountain of mountainsArray) {
+    let mountainOption = new Option(mountain.name);
+    mountainOption.value = mountain.name;
+    mountainSelect.appendChild(mountainOption);
+  }
+}
+
 async function displaySunriseTime(lat, lng) {
   try {
-    const timezone = geoTz(lat, lng)[0]; // Get the timezone based on lat/lng
     const data = await getSunriseForMountain(lat, lng);
 
-    // Use Moment Timezone to format the time in the respective time zone
-    const sunriseTime = moment.tz(data.results.sunrise, timezone).format('hh:mm A');
+    // Use Moment to format the time in UTC
+    const sunriseTime = moment
+      .utc(data.results.sunrise, "HH:mm:ss A")
+      .format("hh:mm A");
 
     return sunriseTime;
   } catch (error) {
-    console.error('Error fetching sunrise time:', error);
-    return 'N/A';
+    console.error("Error fetching sunrise time:", error);
+    return "N/A";
   }
 }
 
 async function displaySunsetTime(lat, lng) {
   try {
-    const timezone = geoTz(lat, lng)[0]; // Get the timezone based on lat/lng
     const data = await getSunsetForMountain(lat, lng);
 
-    // Use Moment Timezone to format the time in the respective time zone
-    const sunsetTime = moment.tz(data.results.sunset, timezone).format('hh:mm A');
+    // Use Moment to format the time in UTC
+    const sunsetTime = moment
+      .utc(data.results.sunset, "HH:mm:ss A")
+      .format("hh:mm A");
 
     return sunsetTime;
   } catch (error) {
-    console.error('Error fetching sunset time:', error);
-    return 'N/A';
-  }
-}
-
-async function displaySunsetTime(lat, lng) {
-  try {
-    const data = await getSunsetForMountain(lat, lng);
-    return data.results.sunset;
-  } catch (error) {
     console.error("Error fetching sunset time:", error);
-    return "N/A"; // Provide a default value in case of an error
+    return "N/A";
   }
 }
 
@@ -100,11 +97,12 @@ async function displayMountainData() {
     // Display sunrise timezones with moment
     let mountainSunriseTime = document.createElement("p");
     mountainSunriseTime.className = "y-center";
-    mountainSunriseTime.innerText = await displaySunriseTime(
-      mountain.coords.lat,
-      mountain.coords.lng,
-      timeZone
-    );
+    mountainSunriseTime.innerText =
+      (await displaySunriseTime(
+        mountain.coords.lat,
+        mountain.coords.lng,
+        timeZone
+      )) + " (UTC)";
     mountainSunrise.appendChild(mountainSunriseTime);
     // Mountain Sunset
     let mountainSunset = document.createElement("div");
@@ -118,11 +116,12 @@ async function displayMountainData() {
     // Display sunset timezones with moment
     let mountainSunsetTime = document.createElement("p");
     mountainSunsetTime.className = "y-center";
-    mountainSunsetTime.innerText = await displaySunsetTime(
-      mountain.coords.lat,
-      mountain.coords.lng,
-      timeZone
-    );
+    mountainSunsetTime.innerText =
+      (await displaySunsetTime(
+        mountain.coords.lat,
+        mountain.coords.lng,
+        timeZone
+      )) + " (UTC)";
     mountainSunset.appendChild(mountainSunsetTime);
 
     let mountainDescription = document.createElement("span");

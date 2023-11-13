@@ -56,12 +56,12 @@ async function displayMountainData() {
 
     let mountainElev = document.createElement("span");
     mountainElev.innerText = `- Elevation: ${mountain.elevation}`;
-    mountainElev.style = "color: rgba(255, 255, 255, 0.3)";
+    mountainElev.style = "color: rgba(0, 0, 0, 0.3)";
     mountainData.appendChild(mountainElev);
 
     let mountainEffort = document.createElement("h3");
     mountainEffort.innerText = `Effort Level: ${mountain.effort}`;
-    mountainEffort.style = "color: rgba(255, 255, 255, 0.7)";
+    mountainEffort.style = "color: rgba(0, 0, 0, 0.7)";
     mountainData.appendChild(mountainEffort);
 
     let mountainDescribe = document.createElement("div");
@@ -126,7 +126,7 @@ async function displayMountainData() {
 
     let mountainDescription = document.createElement("span");
     mountainDescription.innerText = mountain.desc;
-    mountainDescription.style = "font-size: 1.5rem; width: 40%";
+    mountainDescription.style = "font-size: 1.2rem; width: 40%";
     mountainDescribe.appendChild(mountainDescription);
   }
 }

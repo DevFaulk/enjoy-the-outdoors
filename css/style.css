@@ -1,0 +1,23 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.github-logo {
+    height: 40px;
+    width: auto;
+}
+
+.footer-left {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.footer-left a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-left a:hover {
+    color: gray;
+}

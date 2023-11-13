@@ -1,20 +1,20 @@
-"use strict";
+'use strict';
 
-const byLocationRadioFilter = document.querySelector("#byLocationRadioFilter");
-const byTypeRadioFilter = document.querySelector("#byTypeRadioFilter");
-const locationSelector = document.querySelector("#locationSelector");
-const parkTable = document.querySelector("#parkTable");
-const parkTableBody = document.querySelector("#parkTableBody");
-const parkTableHead = document.querySelector("#parkTableHead");
-const byAllRadioFilter = document.querySelector("#byAllRadioFilter");
+const byLocationRadioFilter = document.querySelector('#byLocationRadioFilter');
+const byTypeRadioFilter = document.querySelector('#byTypeRadioFilter');
+const locationSelector = document.querySelector('#locationSelector');
+const parkTable = document.querySelector('#parkTable');
+const parkTableBody = document.querySelector('#parkTableBody');
+const parkTableHead = document.querySelector('#parkTableHead');
+const byAllRadioFilter = document.querySelector('#byAllRadioFilter');
 
 function loadLocationInDropdown() {
-  locationSelector.style.display = "block"; // Show selector
-  locationSelector.innerHTML = ""; // Clear previous options
-  parkTableBody.innerHTML = "";
+  locationSelector.style.display = 'block'; // Show selector
+  locationSelector.innerHTML = ''; // Clear previous options
+  parkTableBody.innerHTML = '';
   byLocationRadioFilter.checked = true;
 
-  let defaultOption = new Option("Select by state...");
+  let defaultOption = new Option('Select by state...');
   locationSelector.appendChild(defaultOption);
 
   for (const state of locationsArray) {
@@ -26,11 +26,11 @@ function loadLocationInDropdown() {
 
 function loadTypeInDropdown() {
   // Clear previous options
-  locationSelector.style.display = "block";
-  locationSelector.innerHTML = "";
-  parkTableBody.innerHTML = "";
+  locationSelector.style.display = 'block';
+  locationSelector.innerHTML = '';
+  parkTableBody.innerHTML = '';
 
-  let defaultOption = new Option("Select by type...");
+  let defaultOption = new Option('Select by type...');
   locationSelector.appendChild(defaultOption);
 
   for (const type of parkTypesArray) {
@@ -41,8 +41,8 @@ function loadTypeInDropdown() {
 }
 
 function loadAllInDropdown() {
-  locationSelector.style.display = "none";
-  parkTableBody.innerHTML = "";
+  locationSelector.style.display = 'none';
+  parkTableBody.innerHTML = '';
 
   for (const park of nationalParksArray) {
     let row = parkTableBody.insertRow();
@@ -57,7 +57,7 @@ function loadAllInDropdown() {
     let phoneCell = row.insertCell(4);
     phoneCell.innerText = park.Phone;
     if (park.Visit) {
-      var link = document.createElement("a");
+      var link = document.createElement('a');
       let websiteCell = row.insertCell(5);
       link.href = park.Visit;
       link.innerText = park.LocationName;
@@ -68,7 +68,7 @@ function loadAllInDropdown() {
 
 function createLocationData() {
   // Clear previous rows
-  parkTableBody.innerHTML = "";
+  parkTableBody.innerHTML = '';
 
   const selectedState = locationSelector.value;
   const selectedType = parkTypesArray.find((type) =>
@@ -77,17 +77,16 @@ function createLocationData() {
 
   for (const park of nationalParksArray) {
     const islandState =
-      selectedState === "Rhode Island" || selectedState === "Virgin Islands";
+      selectedState === 'Rhode Island' || selectedState === 'Virgin Islands';
 
     if (
-      (park.State === selectedState ||
-        (park.LocationName.includes(selectedType) && !islandState))
+      park.State === selectedState ||
+      (park.LocationName.includes(selectedType) && !islandState)
     ) {
       appendParkToTable(park);
     }
   }
 }
-
 
 function appendParkToTable(park) {
   let row = parkTableBody.insertRow();
@@ -102,7 +101,7 @@ function appendParkToTable(park) {
   let phoneCell = row.insertCell(4);
   phoneCell.innerText = park.Phone;
   if (park.Visit) {
-    var link = document.createElement("a");
+    var link = document.createElement('a');
     let websiteCell = row.insertCell(5);
     link.href = park.Visit;
     link.innerText = park.LocationName;
@@ -119,7 +118,7 @@ byLocationRadioFilter.onclick = function () {
 };
 
 byAllRadioFilter.onclick = function () {
-  locationSelector.style.display = "none"; // Hide selector
+  locationSelector.style.display = 'none'; // Hide selector
   loadAllInDropdown();
 };
 

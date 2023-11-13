@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-    <!-- Components Stylesheet -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.0.1/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css" />
     <!-- Base Stylesheet -->
-    <link rel="stylesheet" href="css/pico.css" />
+    <link rel="stylesheet" href="css/pico.classless.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mountains.css" />
+    <!-- Head Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img
-          class="logo-image"
-          src="images/Tom-StoryImg.jpg"
-          alt="add something here later!!!" />
-      </div>
-      <h2 class="page-header">Mountain</h2>
-      <nav class="nav-links">
-        <a href="index.html"><h4>Home</h4></a>
-        <a href="parks.html">
-          <h4>Parks</h4>
-        </a>
-        <a href="mountains.html"><h4>Mountains</h4></a>
+      <nav>
+        <ul>
+          <li><strong>Enjoy The Outdoors</strong></li>
+        </ul>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/parks.html">Parks</a></li>
+          <li><a href="/mountains.html">Mountains</a></li>
+        </ul>
       </nav>
     </header>
     <main>
@@ -37,13 +32,15 @@
         </select>
       </section>
 
-      <section id="mountainData" class="mountain-data"></section>
+      <article id="mountainData" class="mountain-data"></article>
     </main>
-    <footer></footer>
+    <footer>
+      <small>&copy; 2023 Faulk</small>
+    </footer>
 
-    <script src="../scripts/locationData.js"></script>
-    <script src="../scripts/nationalParkData.js"></script>
-    <script src="../scripts/mountainData.js"></script>
-    <script src="../scripts/mountains.js"></script>
+    <script src="/scripts/locationData.js"></script>
+    <script src="/scripts/nationalParkData.js"></script>
+    <script src="/scripts/mountainData.js"></script>
+    <script src="/scripts/mountains.js"></script>
   </body>
 </html>

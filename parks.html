@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-    <!-- Components Stylesheet -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.0.1/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css" />
     <!-- Base Stylesheet -->
-    <link rel="stylesheet" href="css/pico.css" />
+    <link rel="stylesheet" href="css/pico.classless.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/parks.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <img
-          class="logo-image"
-          src="images/Tom-StoryImg.jpg"
-          alt="add something here later!!!" />
-      </div>
-      <h2 class="page-header">Let's explore the great outdoors</h2>
-      <nav class="nav-links">
-        <a href="index.html"><h4>Home</h4></a>
-        <a href="parks.html">
-          <h4>Parks</h4>
-        </a>
-        <a href="mountains.html"><h4>Mountains</h4></a>
+    <header class="container">
+      <nav>
+        <ul>
+          <li><strong>Enjoy The Outdoors</strong></li>
+        </ul>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/parks.html">Parks</a></li>
+          <li><a href="/mountains.html">Mountains</a></li>
+        </ul>
       </nav>
     </header>
     <main>
@@ -52,7 +44,7 @@
         <label for="byAllRadioFilter">All Parks</label>
       </div>
 
-      <div class="select-location">
+      <div style="margin-top: 3rem" class="select-location">
         <h3>States/Territories</h3>
         <div class="select-location-dropdown">
           <select name="states-territories" id="locationSelector">
@@ -74,7 +66,32 @@
         <tbody id="parkTableBody" class="location-table-body"></tbody>
       </table>
     </main>
-    <footer></footer>
+    <footer>
+      <span class="footer-copyright"> Copyright Teddy Faulk 2023 </span>
+      <span class="footer-links">
+        <table>
+          <thead>
+            <tr>
+              <th>Navigation</th>
+              <th>Contact Us</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="index.html">Home Page</a></td>
+              <td>faulkdev@gmail.com</td>
+            </tr>
+            <tr>
+              <td><a href="parks.html">Parks Page</a></td>
+              <td>123-456-7890</td>
+            </tr>
+            <tr>
+              <td><a href="mountains.html">Mountains Page</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </span>
+    </footer>
 
     <script src="../scripts/locationData.js"></script>
     <script src="../scripts/nationalParkData.js"></script>

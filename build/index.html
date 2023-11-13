@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
+    <!-- Components Stylesheet -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.0.1/dist/full.min.css"
       rel="stylesheet"
       type="text/css" />
+      <!-- Base Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- Head Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +19,7 @@
       <nav class="bg-gray-900 flex justify-between">
         <div class="icon">
           <img
-            src="../images/Adams-StoryImage_2.jpg"
+            src="../build/images/Adams-StoryImage_2.jpg"
             alt=""
             class="flex flex-start w-24 h-24 m-4" />
         </div>
@@ -35,23 +37,29 @@
         <!-- Carousel Wrapper -->
         <div class="carousel w-full">
           <div id="slide1" class="carousel-item relative w-full">
-            <img src="../images/item1 carousel.jpg" class="w-full" />
+            <div id="carouselItem1" class="carousel-item-1 w-full">
+              Make the most of your trip...
+            </div>
             <div
               class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide4" class="btn btn-circle">❮</a>
               <a href="#slide2" class="btn btn-circle">❯</a>
             </div>
           </div>
-          <div id="slide2" class="carousel-item relative w-full">
-            <img src="../images/item2 carousel.jpg" class="w-full" />
+          <div id="slide2" class="carousel-item-2 relative w-full">
+            <div id="carouselItem2" class="w-full">
+              Choose the park right for you!
+            </div>
             <div
               class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide1" class="btn btn-circle">❮</a>
               <a href="#slide3" class="btn btn-circle">❯</a>
             </div>
           </div>
-          <div id="slide3" class="carousel-item relative w-full">
-            <img src="../images/item3 carousel.jpg" class="w-full" />
+          <div id="slide3" class="carousel-item-3 relative w-full">
+            <div id="carouselItem1" class="w-full">
+              Choose the mountain right for you!
+            </div>
             <div
               class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide2" class="btn btn-circle">❮</a>
@@ -88,8 +96,8 @@
       </span>
     </footer>
 
-    <script src="scripts/locationData.js"></script>
-    <script src="scripts/nationalParkData.js"></script>
-    <script src="scripts/index.js"></script>
+    <script src="../scripts/locationData.js"></script>
+    <script src="../scripts/nationalParkData.js"></script>
+    <script src="../scripts/index.js"></script>
   </body>
 </html>

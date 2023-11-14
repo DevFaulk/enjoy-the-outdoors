@@ -1,0 +1,74 @@
+.background-image {
+  background-image: url(/images/mountain-index-wallpaper.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+body {
+  height: 560px;
+}
+
+* {
+  color: white;
+}
+
+main {
+  margin: 0px 100px;
+}
+
+header,
+footer {
+  margin: auto !important;
+  padding: 0.5rem !important;
+}
+a {
+  color: white;
+}
+
+a:hover {
+  color: rgb(202, 202, 255) !important;
+  text-decoration: none;
+}
+
+small {
+  font-weight: bold;
+}
+
+img {
+  width: 500px;
+  filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.5));
+}
+
+h4 {
+  color: white;
+}
+
+div {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.github-logo {
+  height: 40px;
+  width: auto;
+}
+
+.footer-left {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.footer-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-left a:hover {
+  color: gray;
+}

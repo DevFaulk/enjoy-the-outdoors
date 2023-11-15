@@ -104,6 +104,7 @@ function appendParkToTable(park) {
     var link = document.createElement('a');
     let websiteCell = row.insertCell(5);
     link.href = park.Visit;
+    link.target = '_blank';
     link.innerText = park.LocationName;
     websiteCell.appendChild(link);
   }

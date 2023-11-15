@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/parks.css" />
   </head>
   <body>
-    <header class="container">
+    <div class="background-image"></div>
+    <header>
       <nav>
         <ul>
           <li><strong>Enjoy The Outdoors</strong></li>
@@ -24,27 +25,29 @@
     </header>
     <main>
       <div class="radio-btn-filter">
-        <input
-          class="radio-btn"
-          type="radio"
-          name="filter"
-          id="byLocationRadioFilter" />
-        <label for="byLocationRadioFilter">By Location</label>
-        <input
-          class="radio-btn"
-          type="radio"
-          name="filter"
-          id="byTypeRadioFilter" />
-        <label for="byTypeRadioFilter">By Type</label>
-        <input
-          class="radio-btn"
-          type="radio"
-          name="filter"
-          id="byAllRadioFilter" />
-        <label for="byAllRadioFilter">All Parks</label>
+        <div class="radio-btn-group">
+          <input
+            class="radio-btn"
+            type="radio"
+            name="filter"
+            id="byLocationRadioFilter" />
+          <label for="byLocationRadioFilter">By Location</label>
+          <input
+            class="radio-btn"
+            type="radio"
+            name="filter"
+            id="byTypeRadioFilter" />
+          <label for="byTypeRadioFilter">By Type</label>
+          <input
+            class="radio-btn"
+            type="radio"
+            name="filter"
+            id="byAllRadioFilter" />
+          <label for="byAllRadioFilter">All Parks</label>
+        </div>
       </div>
 
-      <div style="margin-top: 3rem" class="select-location">
+      <div class="select-location">
         <h3>States/Territories</h3>
         <div class="select-location-dropdown">
           <select name="states-territories" id="locationSelector">
@@ -67,32 +70,17 @@
       </table>
     </main>
     <footer>
-      <span class="footer-copyright"> Copyright Teddy Faulk 2023 </span>
-      <span class="footer-links">
-        <table>
-          <thead>
-            <tr>
-              <th>Navigation</th>
-              <th>Contact Us</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="index.html">Home Page</a></td>
-              <td>faulkdev@gmail.com</td>
-            </tr>
-            <tr>
-              <td><a href="parks.html">Parks Page</a></td>
-              <td>123-456-7890</td>
-            </tr>
-            <tr>
-              <td><a href="mountains.html">Mountains Page</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </span>
+      <div class="footer-left">
+        <a href="https://github.com/DevFaulk">
+          <img
+            class="github-logo"
+            src="/images/github-mark.svg"
+            alt="github cat logo" />
+          <small>Faulk</small></a
+        >
+      </div>
+      <small>&copy; 2023</small>
     </footer>
-
     <script src="../scripts/locationData.js"></script>
     <script src="../scripts/nationalParkData.js"></script>
     <script src="../scripts/parkTypeData.js"></script>

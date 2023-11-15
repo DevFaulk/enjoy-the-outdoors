@@ -8,6 +8,13 @@
 
 body {
   height: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin-top: 0.5rem !important;
+  
 }
 
 * {
@@ -15,25 +22,37 @@ body {
 }
 
 main {
+  display: inherit;
   margin: 0px 100px;
+  align-content: space-between;
 }
 
 header,
 footer {
-  margin: auto !important;
+  flex-direction: row;
+  margin: auto;
   padding: 0.5rem !important;
 }
 a {
   color: white;
 }
 
+.hero {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
 a:hover {
   color: rgb(202, 202, 255) !important;
-  text-decoration: none;
 }
 
 small {
   font-weight: bold;
+}
+
+.hero-left {
+  margin-right: 6rem;
 }
 
 img {
@@ -52,6 +71,8 @@ div {
 footer {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
 }
 
 .github-logo {
@@ -65,7 +86,6 @@ footer {
 }
 
 .footer-left a {
-  text-decoration: none;
   color: white;
 }
 

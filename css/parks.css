@@ -1,0 +1,100 @@
+.background-image {
+  position: absolute;
+  background-image: url(/images/item1\ carousel.jpg);
+  background-color: rgba(30, 30, 30, 0.6);
+  filter: blur(6px);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+header {
+  margin-top: 0.5rem !important;
+}
+
+* {
+  color: white;
+}
+
+td, th {
+    color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 100px;
+  align-content: space-between;
+}
+
+header,
+footer {
+  flex-direction: row;
+  margin: auto;
+  padding: 0.5rem !important;
+}
+a {
+  color: white;
+}
+
+#locationSelector {
+  background-color: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+a:hover {
+  color: rgb(202, 202, 255) !important;
+}
+
+small {
+  font-weight: bold;
+}
+
+div {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end !important;
+  margin-bottom: 0.5rem;
+}
+
+.github-logo {
+  height: 40px;
+  width: auto;
+}
+
+.footer-left {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.footer-left a {
+  color: white;
+}
+
+.footer-left a:hover {
+  color: gray;
+}
+
+.radio-btn-filter {
+    display: flex;
+    flex-direction: column;
+    margin-block: 2rem;
+}
+
+.radio-btn-group {
+    display: flex;
+    flex-direction: row;
+}

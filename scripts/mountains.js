@@ -72,7 +72,7 @@ async function displayMountainData() {
       "display: inherit; flex-direction: column; margin-inline-end: 2rem; text-align: center";
     mountainDescribe.appendChild(imgAndCoords);
     let mountainImg = document.createElement("img");
-    mountainImg.src = `images/Washington-StoryImage_2.jpg}`;
+    mountainImg.src = `images/${mountain.src}`;
     mountainImg.style = "height: 400px; width: 100%; padding-bottom: 1rem";
     mountainImg.alt = mountain.name;
     imgAndCoords.appendChild(mountainImg);

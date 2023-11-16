@@ -1,5 +1,15 @@
+body {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
 .background-image {
   position: absolute;
+  left: 0%;
   background-image: url(/images/item1\ carousel.jpg);
   background-color: rgba(30, 30, 30, 0.6);
   filter: blur(6px);
@@ -10,23 +20,27 @@
   z-index: -1;
 }
 
-body {
-  height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
-  z-index: 1;
+  margin-top: 0.5rem !important;
+  background: fixed;
+  background-color: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  width: 100% !important;
 }
 
-header {
-  margin-top: 0.5rem !important;
+nav {
+  display: flex;
 }
 
 * {
   color: white;
 }
 
-td, th {
-    color: white;
+td,
+th {
+  color: white;
 }
 
 main {
@@ -89,12 +103,12 @@ footer {
 }
 
 .radio-btn-filter {
-    display: flex;
-    flex-direction: column;
-    margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-block: 2rem;
 }
 
 .radio-btn-group {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }

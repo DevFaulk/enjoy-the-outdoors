@@ -41,28 +41,11 @@ function loadTypeInDropdown() {
 }
 
 function loadAllInDropdown() {
-  locationSelector.style.display = 'none';
+  locationSelector.style.display = 'none'; // Hide selector
   parkTableBody.innerHTML = '';
 
   for (const park of nationalParksArray) {
-    let row = parkTableBody.insertRow();
-    let nameCell = row.insertCell(0);
-    nameCell.innerText = park.LocationName;
-    let addrCell = row.insertCell(1);
-    addrCell.innerText = park.Address;
-    let cityStateCell = row.insertCell(2);
-    cityStateCell.innerText = `${park.City}, ${park.State}`;
-    let zipCell = row.insertCell(3);
-    zipCell.innerText = park.ZipCode;
-    let phoneCell = row.insertCell(4);
-    phoneCell.innerText = park.Phone;
-    if (park.Visit) {
-      var link = document.createElement('a');
-      let websiteCell = row.insertCell(5);
-      link.href = park.Visit;
-      link.innerText = park.LocationName;
-      websiteCell.appendChild(link);
-    }
+    appendParkToTable(park); // Use the same function to create boxes
   }
 }
 
@@ -142,8 +125,8 @@ byLocationRadioFilter.onclick = function () {
 
 byAllRadioFilter.onclick = function () {
   locationSelector.style.display = 'none'; // Hide selector
-  
-  createLocationData();
+  parkTable.style.display = 'inline';
+  loadAllInDropdown(); // Execute function to load all data
 };
 
 locationSelector.onchange = function () {

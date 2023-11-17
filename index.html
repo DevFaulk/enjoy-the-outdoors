@@ -5,24 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <!-- Base Stylesheet -->
-    <link rel="stylesheet" href="css/pico.classless.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
-  <body class="background-image">
+  <div class="background-image"></div>
+  <body">
     <header>
-      <nav>
-        <ul>
-          <li><strong>Enjoy The Outdoors</strong></li>
-        </ul>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/parks.html">Parks</a></li>
-          <li><a href="/mountains.html">Mountains</a></li>
-        </ul>
+      <nav class="navbar">
+        <div class="nav-left">
+          <div class="logo">
+            <img src="/images/Liberty-StoryImage_2.jpg" alt="" />
+          </div>
+
+          <ul class="title">
+            <li><strong>The Great Outdoors</strong></li>
+          </ul>
+        </div>
+        <div class="nav-items">
+          <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/parks.html">Parks</a></li>
+            <li><a href="/mountains.html">Mountains</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
-    <main>
+    <main class="content">
       <div style="display: flex; justify-content: space-between" class="hero">
         <div class="hero-left">
           <a href="/parks.html">

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <!-- Base Stylesheet -->
-    <link rel="stylesheet" href="css/pico.classless.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/mountains.css" />
     <!-- Head Scripts -->
@@ -13,26 +15,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><strong>Enjoy The Outdoors</strong></li>
-        </ul>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/parks.html">Parks</a></li>
-          <li><a href="/mountains.html">Mountains</a></li>
-        </ul>
+    <div class="background-image"></div>
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-left">
+          <div class="logo">
+            <img src="/images/Liberty-StoryImage_2.jpg" alt="" />
+          </div>
+
+          <ul class="title">
+            <li><strong>The Great Outdoors</strong></li>
+          </ul>
+        </div>
+        <div class="nav-items">
+          <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/parks.html">Parks</a></li>
+            <li><a href="/mountains.html">Mountains</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
-    <main>
-      <section>
-        <select name="mountain" id="mountainSelect">
-          <option value="select">Select...</option>
-        </select>
-      </section>
+    <main class="content">
+      <h1 class="card-title">Find The Mountain For</h1>
+      <h1 class="card-title-sub">You...</h1>
+      <article class="card">
+        <section>
+          <select name="mountain" id="mountainSelect">
+            <option value="select">Select...</option>
+          </select>
+        </section>
 
-      <article id="mountainData" class="mountain-data"></article>
+        <div
+          id="mountainData"
+          class="mountain-data"
+          style="display: none"></div>
+      </article>
     </main>
     <footer>
       <small>&copy; 2023 Faulk</small>

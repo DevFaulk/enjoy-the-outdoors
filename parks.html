@@ -14,62 +14,72 @@
   <body>
     <div class="background-image"></div>
     <header>
-      <nav>
-        <ul>
-          <li><strong>Enjoy The Outdoors</strong></li>
-        </ul>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/parks.html">Parks</a></li>
-          <li><a href="/mountains.html">Mountains</a></li>
-        </ul>
+      <nav class="navbar">
+        <div class="nav-left">
+          <div class="logo">
+            <img src="/images/Liberty-StoryImage_2.jpg" alt="" />
+          </div>
+
+          <ul class="title">
+            <li><strong>The Great Outdoors</strong></li>
+          </ul>
+        </div>
+        <div class="nav-items">
+          <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/parks.html">Parks</a></li>
+            <li><a href="/mountains.html">Mountains</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
-    <main>
-      <div class="radio-btn-filter">
-        <div class="radio-btn-group">
-          <input
-            class="radio-btn"
-            type="radio"
-            name="filter"
-            id="byLocationRadioFilter" />
-          <label for="byLocationRadioFilter">By Location</label>
-          <input
-            class="radio-btn"
-            type="radio"
-            name="filter"
-            id="byTypeRadioFilter" />
-          <label for="byTypeRadioFilter">By Type</label>
-          <input
-            class="radio-btn"
-            type="radio"
-            name="filter"
-            id="byAllRadioFilter" />
-          <label for="byAllRadioFilter">All Parks</label>
+    <main class="content">
+      <article class="card">
+        <div class="radio-btn-filter">
+          <div class="radio-btn-group">
+            <input
+              class="radio-btn"
+              type="radio"
+              name="filter"
+              id="byLocationRadioFilter" />
+            <label for="byLocationRadioFilter">By Location</label>
+            <input
+              class="radio-btn"
+              type="radio"
+              name="filter"
+              id="byTypeRadioFilter" />
+            <label for="byTypeRadioFilter">By Type</label>
+            <input
+              class="radio-btn"
+              type="radio"
+              name="filter"
+              id="byAllRadioFilter" />
+            <label for="byAllRadioFilter">All Parks</label>
+          </div>
         </div>
-      </div>
 
-      <div class="select-location">
-        <h3>States/Territories</h3>
-        <div class="select-location-dropdown">
-          <select name="states-territories" id="locationSelector">
-            <option value="select">Select...</option>
-          </select>
+        <div class="select-location">
+          <h3>States/Territories</h3>
+          <div class="select-location-dropdown">
+            <select name="states-territories" id="locationSelector">
+              <option value="select">Select...</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <table id="parkTable" class="location-table">
-        <thead>
-          <tr id="parkTableHead">
-            <th>Name</th>
-            <th>Address</th>
-            <th>City & State</th>
-            <th>Zipcode</th>
-            <th>Phone</th>
-            <th>Website</th>
-          </tr>
-        </thead>
-        <tbody id="parkTableBody" class="location-table-body"></tbody>
-      </table>
+        <table id="parkTable" class="location-table">
+          <thead>
+            <tr id="parkTableHead">
+              <th>Name</th>
+              <th>Address</th>
+              <th>City & State</th>
+              <th>Zipcode</th>
+              <th>Phone</th>
+              <th>Website</th>
+            </tr>
+          </thead>
+          <tbody id="parkTableBody" class="location-table-body"></tbody>
+        </table>
+      </article>
     </main>
     <footer>
       <div class="footer-left">

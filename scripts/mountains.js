@@ -158,12 +158,11 @@ window.onload = async () => {
 mountainSelect.onchange = function () {
   let selectedOption = mountainSelect.options[mountainSelect.selectedIndex];
   if (
-    selectedOption.innerText == 'None' &&
-    card.className == 'card cardReplace'
+    selectedOption.innerText == 'None'
   ) {
     card.className = 'card cardDefault';
     selectedOption.innerText = 'Select...';
-    mountainData.style.display = 'block';
+    mountainData.style.display = 'none';
     cardTitle.className =
       'card-title animated-slower fadeInUp animatedFadeInUp';
     cardTitleSub.className =

@@ -89,24 +89,43 @@ function createLocationData() {
 }
 
 function appendParkToTable(park) {
-  let row = parkTableBody.insertRow();
-  let nameCell = row.insertCell(0);
-  nameCell.innerText = park.LocationName;
-  let addrCell = row.insertCell(1);
-  addrCell.innerText = park.Address;
-  let cityStateCell = row.insertCell(2);
-  cityStateCell.innerText = `${park.City}, ${park.State}`;
-  let zipCell = row.insertCell(3);
-  zipCell.innerText = park.ZipCode;
-  let phoneCell = row.insertCell(4);
-  phoneCell.innerText = park.Phone;
+  // --------------- box
+  let box = document.createElement('div');
+  parkTableBody.appendChild(box);
+  // --------------- cell
+  let nameCell = document.createElement('h4');
+  nameCell.innerText = `Name: ${park.LocationName}`;
+  box.appendChild(nameCell);
+  // --------------- cell
+  if (park.Address) {
+    let addrCell = document.createElement('p');
+    addrCell.innerText = `Address: ${park.Address}`;
+    box.appendChild(addrCell);
+  }
+  // --------------- cell
+  let cityStateCell = document.createElement('p');
+  cityStateCell.innerText = `State: ${park.City}, ${park.State}`;
+  box.appendChild(cityStateCell);
+  // --------------- cell
+  if (park.ZipCode) {
+    let zipCell = document.createElement('p');
+    zipCell.innerText = `Zipcode: ${park.ZipCode}`;
+    box.appendChild(zipCell);
+  }
+  // --------------- cell
+  if (park.Phone) {
+    let phoneCell = document.createElement('p');
+    phoneCell.innerText = `Phone Number: ${park.Phone}`;
+    box.appendChild(phoneCell);
+  }
+  // --------------- cell
   if (park.Visit) {
     var link = document.createElement('a');
-    let websiteCell = row.insertCell(5);
     link.href = park.Visit;
     link.target = '_blank';
-    link.innerText = park.LocationName;
-    websiteCell.appendChild(link);
+    let websiteCell = document.createElement('p');
+    websiteCell.innerText = `Website: ${park.LocationName}`;
+    box.appendChild(websiteCell);
   }
 }
 
@@ -123,7 +142,10 @@ byAllRadioFilter.onclick = function () {
   loadAllInDropdown();
 };
 
-locationSelector.onchange = createLocationData;
+locationSelector.onchange = function () {
+  parkTable.style.display = 'inline';
+  createLocationData;
+};
 
 // Initial load
 loadLocationInDropdown();

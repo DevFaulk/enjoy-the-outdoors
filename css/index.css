@@ -11,8 +11,7 @@ a {
 }
 
 .content {
-  display: flex;
-  justify-content: center;
+  margin: auto;
 }
 
 .hero {

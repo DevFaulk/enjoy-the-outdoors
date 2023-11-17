@@ -142,7 +142,8 @@ byLocationRadioFilter.onclick = function () {
 
 byAllRadioFilter.onclick = function () {
   locationSelector.style.display = 'none'; // Hide selector
-  loadAllInDropdown();
+  
+  createLocationData();
 };
 
 locationSelector.onchange = function () {

@@ -76,7 +76,13 @@
 
 .card-box {
   backdrop-filter: blur(6px);
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+
   margin-block: 0.1rem;
   border: solid 1px darkgrey;
+}
+
+a .card-box:hover {
+  background-color: rgba(81, 68, 141, 0.6);
 }

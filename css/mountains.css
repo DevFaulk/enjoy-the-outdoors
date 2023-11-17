@@ -83,3 +83,34 @@ h6 {
   justify-content: center;
   align-content: center;
 }
+
+@keyframes moveUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -330px, 0);
+  }
+}
+
+.cardReplace {
+  animation-name: moveUp;
+  animation-duration: 1500ms;
+}
+
+@keyframes moveDown {
+  from {
+    transform: translate3d(0, -330px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+}
+
+.cardDefault {
+  animation-name: moveDown;
+  animation-duration: 1500ms;
+}

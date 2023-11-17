@@ -2,7 +2,7 @@ const mountainSelect = document.querySelector('#mountainSelect');
 const mountainData = document.querySelector('#mountainData');
 const cardTitle = document.querySelector('.card-title');
 const cardTitleSub = document.querySelector('.card-title-sub');
-
+const card = document.querySelector('.card');
 async function displayMountainsInSelect() {
   for (const mountain of mountainsArray) {
     let mountainOption = new Option(mountain.name);
@@ -156,18 +156,38 @@ window.onload = async () => {
   displayMountainData();
 };
 mountainSelect.onchange = function () {
+  let selectedOption = mountainSelect.options[mountainSelect.selectedIndex];
+  if (
+    selectedOption.innerText == 'None' &&
+    card.className == 'card cardReplace'
+  ) {
+    card.className = 'card cardDefault';
+    selectedOption.innerText = 'Select...';
+    mountainData.style.display = 'block';
+    cardTitle.className =
+      'card-title animated-slower fadeInUp animatedFadeInUp';
+    cardTitleSub.className =
+      'card-title-sub animated-slower fadeInUp animatedFadeInUp';
+
+    setTimeout(moveCardDown, 2000);
+  }
+  if (selectedOption.value === 'select') {
+    mountainData.innerHTML = '';
+    cardTitle.className =
+      'card-title animated-slower fadeInUp animatedFadeInUp';
+    cardTitleSub.className =
+      'card-title-sub animated-slower fadeInUp animatedFadeInUp';
+  }
+  let selectOption = mountainSelect.querySelector('option[value="select"]');
+  if (selectOption) {
+    selectOption.innerText = 'None';
+  }
   mountainData.style.display = 'block';
   cardTitle.className =
     'card-title animated-slower animatedFadeOutUp fadeOutUp';
   cardTitleSub.className =
     'card-title-sub animated-slower animatedFadeOutUp fadeOutUp';
-
-  setTimeout(deleteTitle, 2000);
-
-  function deleteTitle() {
-    cardTitle.style.display = 'none';
-    cardTitleSub.style.display = 'none';
-  }
+  card.className = 'card cardReplace';
 
   displayMountainData();
 };

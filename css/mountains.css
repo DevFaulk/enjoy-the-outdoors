@@ -9,26 +9,77 @@
 .card-title {
   text-align: center;
   font-size: 4em;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
   -webkit-filter: drop-shadow(4px);
-  background-image: linear-gradient(135deg, lightblue, pink, #faeaa2);
+  background-image: linear-gradient(
+    35deg,
+    rgba(94, 103, 238, 0.8),
+    rgba(250, 143, 143, 0.8),
+    rgba(255, 234, 143, 0.8)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: transparent;
   -webkit-text-fill-color: transparent;
-  margin-bottom: .4em;
+  margin-bottom: 0.4em;
 }
 
 .card-title-sub {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: -.6em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  margin-top: -0.6em;
   text-align: center;
   font-size: 5em;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
-  -webkit-filter: drop-shadow(4px);
-  background-image: linear-gradient(135deg, lightblue, pink, #faeaa2);
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.6));
+  -webkit-filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.6));
+  background-image: linear-gradient(
+    35deg,
+    rgba(94, 103, 238, 0.8),
+    rgba(250, 143, 143, 0.8),
+    rgba(255, 234, 143, 0.8)
+  );
+
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: transparent;
   -webkit-text-fill-color: transparent;
+}
+
+main > h1 {
+  z-index: 0;
+}
+
+select {
+  background-color: rgba(15, 15, 10, 0.3);
+  color: rgba(0, 30, 0, 0.9);
+}
+
+select {
+  background-color: rgba(15, 15, 10, 0.3);
+}
+
+select option {
+  color: rgba(0, 30, 0, 0.9);
+}
+
+/* IDs */
+#mountainData h1,
+span,
+h6 {
+  color: rgba(10, 20, 0, 0.9);
+}
+
+#mountainData p {
+  color: rgba(10, 20, 0, 0.8);
+}
+
+#mountainData .img-coords span {
+  margin-bottom: 2rem;
+}
+
+#mountainData span div {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
 }

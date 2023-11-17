@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <div class="background-image"></div>
-  <body">
+  <body>
     <header class="header">
       <nav class="navbar">
         <div class="nav-left">
@@ -20,12 +20,16 @@
             <img src="/images/Liberty-StoryImage_2.jpg" alt="" />
           </div>
 
-          <ul class="title">
-            <li><strong>The Great Outdoors</strong></li>
+          <ul class="title shadow">
+            <li>
+              <strong
+                >The <span class="cyan-gradient">Great</span> Outdoors</strong
+              >
+            </li>
           </ul>
         </div>
         <div class="nav-items">
-          <ul class="nav-links">
+          <ul class="nav-links shadow">
             <li><a href="/index.html">Home</a></li>
             <li><a href="/parks.html">Parks</a></li>
             <li><a href="/mountains.html">Mountains</a></li>
@@ -34,21 +38,28 @@
       </nav>
     </header>
     <main class="content">
-      <div style="display: flex; justify-content: space-between" class="hero">
+      <div class="animated-slower animatedFadeInUp fadeInUp">
+        <h2>Pick your journey...</h2>
+      </div>
+
+      <div
+        style="display: flex; justify-content: space-between"
+        class="hero animated-slowest animatedFadeInUp fadeInUp">
         <div class="hero-left">
           <a href="/parks.html">
-            <h4>Parks</h4>
+            <h3 class="color-transition shadow">Parks</h3>
             <img src="/images/Bond-StoryImage_3.jpg" alt="" />
           </a>
         </div>
         <div class="hero-right">
           <a href="/mountains.html">
-            <h4>Mountains</h4>
+            <h3 class="color-transition shadow">Mountains</h3>
             <img src="/images/Passaconoway-StoryImg.jpg" alt=""
           /></a>
         </div>
       </div>
     </main>
+
     <footer>
       <div class="footer-left">
         <a href="https://github.com/DevFaulk">

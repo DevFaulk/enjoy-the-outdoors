@@ -1,5 +1,7 @@
 const mountainSelect = document.querySelector('#mountainSelect');
 const mountainData = document.querySelector('#mountainData');
+const cardTitle = document.querySelector('.card-title');
+const cardTitleSub = document.querySelector('.card-title-sub');
 
 async function displayMountainsInSelect() {
   for (const mountain of mountainsArray) {
@@ -70,6 +72,7 @@ async function displayMountainData() {
     let imgAndCoords = document.createElement('span');
     imgAndCoords.style =
       'display: inherit; flex-direction: column; margin-inline-end: 2rem; text-align: center';
+    imgAndCoords.className = 'img-coords';
     mountainDescribe.appendChild(imgAndCoords);
     let mountainImg = document.createElement('img');
     mountainImg.src = `images/${mountain.img}`;
@@ -124,9 +127,9 @@ async function displayMountainData() {
       )) + ' (UTC)';
     mountainSunset.appendChild(mountainSunsetTime);
 
-    let mountainDescription = document.createElement('span');
+    let mountainDescription = document.createElement('h6');
     mountainDescription.innerText = mountain.desc;
-    mountainDescription.style = 'font-size: 1.2rem; width: 40%';
+    mountainDescription.style = 'font-size: 1.2rem; width: 60%';
     mountainDescribe.appendChild(mountainDescription);
   }
 }
@@ -154,5 +157,17 @@ window.onload = async () => {
 };
 mountainSelect.onchange = function () {
   mountainData.style.display = 'block';
+  cardTitle.className =
+    'card-title animated-slower animatedFadeOutUp fadeOutUp';
+  cardTitleSub.className =
+    'card-title-sub animated-slower animatedFadeOutUp fadeOutUp';
+
+  setTimeout(deleteTitle, 2000);
+
+  function deleteTitle() {
+    cardTitle.style.display = 'none';
+    cardTitleSub.style.display = 'none';
+  }
+
   displayMountainData();
 };

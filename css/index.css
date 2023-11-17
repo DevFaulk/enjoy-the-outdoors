@@ -35,13 +35,45 @@ small {
 
 img {
   width: 500px;
-  filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.5));
 }
 
-h4 {
+h3 {
   color: white;
 }
 
 div {
   color: rgba(255, 255, 255, 0.8);
 }
+.color-transition {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+
+.color-transition:hover {
+  color: lightskyblue;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.card {
+  background-color: rgba(138, 130, 119, 0.2);
+}
+
+div>h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  filter: drop-shadow(2px 2px 2px black);
+}
+

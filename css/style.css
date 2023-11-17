@@ -6,7 +6,7 @@
 
 body {
   position: relative;
-  height: 1268px;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@ body {
 }
 
 header {
+  z-index: 99;
   display: flex;
   margin-top: 0 !important;
   margin-bottom: 8rem !important;
@@ -23,7 +24,7 @@ header {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   width: 100% !important;
-  filter: drop-shadow(4px 2px 4px rgba(0, 0, 0, .1));
+  filter: drop-shadow(4px 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 nav {
@@ -119,11 +120,12 @@ footer {
 .logo img {
   max-width: 70%;
   height: auto;
+  filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.3));
 }
 
 .title {
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .nav-items {
@@ -161,13 +163,120 @@ footer {
 }
 
 .background-image {
-  position: absolute;
-  left: 0%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(30, 30, 30, 0.6);
   filter: blur(6px);
-  height: 100% !important;
-  width: 100%;
+  z-index: -1;
   background-size: cover;
   background-position: center;
-  z-index: -1;
+}
+
+.cyan-gradient {
+  background-image: linear-gradient(135deg, lightblue, pink, #faeaa2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow {
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+main img {
+  filter: drop-shadow(5px 5px 10px rgba(10, 10, 10, 0.6));
+}
+
+select {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animated-slower {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animated-slowest {
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+@keyframes fadeOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -40px, 0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -40px, 0);
+    opacity: 0;
+  }
+}
+.animatedFadeOutUp {
+  opacity: 1;
+}
+
+.fadeOutUp {
+  opacity: 1;
+  animation-name: fadeOutUp;
+  -webkit-animation-name: fadeOutUp;
 }

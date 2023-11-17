@@ -23,12 +23,16 @@
             <img src="/images/Liberty-StoryImage_2.jpg" alt="" />
           </div>
 
-          <ul class="title">
-            <li><strong>The Great Outdoors</strong></li>
+          <ul class="title shadow">
+            <li>
+              <strong
+                >The <span class="cyan-gradient">Great</span> Outdoors</strong
+              >
+            </li>
           </ul>
         </div>
         <div class="nav-items">
-          <ul class="nav-links">
+          <ul class="nav-links shadow">
             <li><a href="/index.html">Home</a></li>
             <li><a href="/parks.html">Parks</a></li>
             <li><a href="/mountains.html">Mountains</a></li>
@@ -37,8 +41,12 @@
       </nav>
     </header>
     <main class="content">
-      <h1 class="card-title">Find The Mountain For</h1>
-      <h1 class="card-title-sub">You...</h1>
+      <h1 class="card-title animated-slower fadeInUp animatedFadeInUp">
+        Find The Mountain For
+      </h1>
+      <h1 class="card-title-sub animated-slower fadeInUp animatedFadeInUp">
+        You...
+      </h1>
       <article class="card">
         <section>
           <select name="mountain" id="mountainSelect">
@@ -53,7 +61,16 @@
       </article>
     </main>
     <footer>
-      <small>&copy; 2023 Faulk</small>
+      <div class="footer-left">
+        <a href="https://github.com/DevFaulk">
+          <img
+            class="github-logo"
+            src="/images/github-mark.svg"
+            alt="github cat logo" />
+          <small>Faulk</small></a
+        >
+      </div>
+      <small>&copy; 2023</small>
     </footer>
 
     <script src="/scripts/locationData.js"></script>

@@ -90,8 +90,20 @@ function createLocationData() {
 
 function appendParkToTable(park) {
   // --------------- box
-  let box = document.createElement('div');
-  parkTableBody.appendChild(box);
+  if (!park.Visit) {
+    var box = document.createElement('article');
+    box.className = 'card-box';
+    parkTableBody.appendChild(box);
+  }
+  if (park.Visit) {
+    let boxLink = document.createElement('a');
+    boxLink.href = park.Visit;
+    boxLink.target = '_blank';
+    parkTableBody.appendChild(boxLink);
+    var box = document.createElement('article');
+    box.className = 'card-box';
+    boxLink.appendChild(box);
+  }
   // --------------- cell
   let nameCell = document.createElement('h4');
   nameCell.innerText = `Name: ${park.LocationName}`;
@@ -118,15 +130,6 @@ function appendParkToTable(park) {
     phoneCell.innerText = `Phone Number: ${park.Phone}`;
     box.appendChild(phoneCell);
   }
-  // --------------- cell
-  if (park.Visit) {
-    var link = document.createElement('a');
-    link.href = park.Visit;
-    link.target = '_blank';
-    let websiteCell = document.createElement('p');
-    websiteCell.innerText = `Website: ${park.LocationName}`;
-    box.appendChild(websiteCell);
-  }
 }
 
 byTypeRadioFilter.onclick = function () {
@@ -144,7 +147,7 @@ byAllRadioFilter.onclick = function () {
 
 locationSelector.onchange = function () {
   parkTable.style.display = 'inline';
-  createLocationData;
+  createLocationData();
 };
 
 // Initial load

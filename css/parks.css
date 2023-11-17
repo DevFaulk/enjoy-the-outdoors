@@ -19,3 +19,13 @@
   background-color: rgba(30, 30, 30, 0.6);
   backdrop-filter: blur(6px);
 }
+
+.content {
+  display: flex;
+  justify-content: center !important;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+}

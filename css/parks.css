@@ -3,6 +3,45 @@
   background-image: url(/images/item1\ carousel.jpg);
 }
 
+.card-title {
+  text-align: center;
+  font-size: 4em;
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.8));
+  -webkit-filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(
+    210deg,
+    rgba(94, 103, 238, 0.8),
+    rgba(250, 143, 143, 0.8),
+    rgba(255, 234, 143, 0.8)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: transparent;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.4em;
+}
+
+.card-title-sub {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  margin-top: -0.6em;
+  text-align: center;
+  font-size: 5em;
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.8));
+  -webkit-filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(
+    35deg,
+    rgba(94, 103, 238, 0.8),
+    rgba(250, 143, 143, 0.8),
+    rgba(255, 234, 143, 0.8)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 .radio-btn-filter {
   display: flex;
   flex-direction: column;
@@ -20,6 +59,11 @@
   backdrop-filter: blur(6px);
 }
 
+.location-selector {
+  backdrop-filter: blur(6px);
+  background-color: rgba(30, 30, 30, 0.6);
+}
+
 .content {
   display: flex;
   justify-content: center !important;
@@ -28,4 +72,11 @@
 
 .card {
   width: 100%;
+}
+
+.card-box {
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-block: 0.1rem;
+  border: solid 1px darkgrey;
 }

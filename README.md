@@ -22,19 +22,15 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      </li>
-    <li><a href="#Index/Home Page">Index/Home Page</a></li>
-    <li><a href="# Parks Page">Parks Page</a></li>
-    <li><a href="# Mountains Page">Mountains Page</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
+
+## Table Of Contents
+
+1. [About The Project](#about-the-project)
+2. [Index/Home Page](#indexhome-page)
+3. [Parks Page](#parks-page)
+4. [Mountains Page](#mountains-page)
+5. [Contact](#contact)
+6. [Acknowledgments](#acknowledgments)
 
 <!-- ABOUT THE PROJECT -->
 
